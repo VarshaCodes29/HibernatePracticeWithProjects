@@ -1,0 +1,35 @@
+package com.test;
+import org.hibernate.cfg.Configuration;
+
+import com.mysql.cj.api.Session;
+
+import jakarta.transaction.Transaction;
+
+import org.hibernate.SessionFactory;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session openSession = buildSessionFactory.openSession();
+        Transaction beginTransaction = openSession.beginTransaction();
+        
+        
+        //creating new object
+        Teacher tr = new Teacher():
+        	tr.setId(12);
+        	tr.setName("varsha");
+        	tr.setAddress("bhadrak");
+        	
+        	openSession.save(tr);
+        	
+        	beginTransaction.commit();
+        	openSession.close();
+        	
+    }
+}

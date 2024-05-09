@@ -1,0 +1,37 @@
+package com.test;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class App {
+    public static void main(String[] args) {
+        // Creating SessionFactory instance
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        
+        // Opening session
+        Session session = sessionFactory.openSession();
+        
+        // Beginning transaction
+        Transaction transaction = session.beginTransaction();
+        
+        // Creating new Teacher object
+        Teacher teacher = new Teacher();
+        teacher.setId(12);
+        teacher.setName("varsha");
+        teacher.setAddress("bhadrak");
+        
+        // Saving the object
+        session.save(teacher);
+        
+        // Committing transaction
+        transaction.commit();
+        
+        // Closing session
+        session.close();
+        
+        // Closing SessionFactory
+        sessionFactory.close();
+    }
+}
