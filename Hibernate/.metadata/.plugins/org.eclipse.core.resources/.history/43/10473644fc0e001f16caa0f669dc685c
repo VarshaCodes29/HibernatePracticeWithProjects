@@ -15,27 +15,19 @@ public class App {
         
         // Opening session
         Session session = sessionFactory.openSession();
-        Transaction tr = session.beginTransaction();
         
         
-         //fetch
-//       Query q = session.createQuery("from Teacher where id = 12 ");
-        //delete
-//        Query q = session.createQuery(" delete from Teacher where id = 12 ");
-        //update
-        Query q = session.createQuery(" update Teacher set name ='varshaSharmistha' where id=14");
-        int result = q.executeUpdate();
-        System.out.println(result);
-//       //unique, list
-//       List<Teacher> l = q.list();
-//       
-//       for(Teacher t:l)
-//       {
-//    	   System.out.println(t);
-//       }
+        
+       Query q = session.createQuery("from Teacher where id = 12 ");
+       //unique, list
+       List<Teacher> l = q.list();
+       
+       for(Teacher t:l)
+       {
+    	   System.out.println(t);
+       }
         // Closing session
         session.close();
-        tr.commit();
         
         // Closing SessionFactory
         sessionFactory.close();

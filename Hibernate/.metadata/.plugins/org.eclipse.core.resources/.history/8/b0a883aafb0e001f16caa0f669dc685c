@@ -35,10 +35,4 @@ public class Teacher {
     public void setAddress(String address) {
         this.address = address;
     }
-
-	@Override
-	public String toString() {
-		return "Teacher [id=" + id + ", name=" + name + ", address=" + address + "]";
-	}
-    
 }
