@@ -28,7 +28,7 @@ public class App {
         // Committing transaction
         //transaction.commit();
         
-        Teacher tr = session.get(Teacher.class,14);
+        Teacher tr = session.get(Teacher.class,12);
         System.out.println(tr.getName());
         
         // Closing session
